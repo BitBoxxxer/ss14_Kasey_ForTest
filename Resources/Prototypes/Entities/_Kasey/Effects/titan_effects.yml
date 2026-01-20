@@ -1,0 +1,81 @@
+# Телеграф — круг (слабый)
+- type: entity
+  id: TitanTelegraphCircle
+  name: Telegraph Circle
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: Effects/Telegraphs/circle.rsi
+    state: warn
+    color: "#FFAA00AA"
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 1.2
+
+# Телеграф — круг (сильный/удар рукой)
+- type: entity
+  id: TitanTelegraphCircleStrong
+  name: Telegraph Circle Strong
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: Effects/Telegraphs/circle.rsi
+    state: warn
+    color: "#FF3300CC"
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 1.0
+
+# Телеграф — линия для лазера
+- type: entity
+  id: TitanTelegraphLine
+  name: Telegraph Line
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: Effects/Telegraphs/line.rsi
+    state: warn
+    color: "#00FFFF88"
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 0.8
+
+# Эффект появления шипов
+- type: entity
+  id: TitanSpikeEffect
+  name: Spike Emerge
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: Effects/Titan/spike.rsi
+    state: burst
+    drawdepth: Effects
+    spriteSize: 1,1
+  - type: TimedDespawn
+    lifetime: 0.5
+
+# Эффект лазера
+- type: entity
+  id: TitanLaserBeamEffect
+  name: Titan Beam
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: Effects/Titan/beam.rsi
+    state: beam
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 0.5
+
+# Эффект удара рукой
+- type: entity
+  id: TitanSlamImpact
+  name: Slam Impact
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: Effects/Titan/slam.rsi
+    state: impact
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 0.6

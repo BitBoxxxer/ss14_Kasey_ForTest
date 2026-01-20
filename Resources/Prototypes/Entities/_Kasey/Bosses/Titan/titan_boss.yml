@@ -1,0 +1,73 @@
+- type: entity
+  id: MobTitanBoss
+  name: Titan, the Broken Colossus
+  description: A colossal, broken machine. Its eyes follow you.
+  # categories: [ HideSpawnMenu ] # уберите, если хотите спавнить из меню
+  components:
+  - type: Sprite
+    sprite: Mobs/Bosses/titan.rsi
+    layers:
+      - state: base
+        map: [ "base" ]
+      - state: eyes
+        map: [ "eyes" ]
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      body:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.9
+        density: 500
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Transform
+    anchored: false
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.5
+    baseSprintSpeed: 2.2
+  - type: Damageable
+    damageContainer: Biological # или "Structural" если хотите машинный тип
+    damageModifierSet: HeavyArmor # подберите подходящий
+  - type: MobState
+    thresholds:
+      alive: 0
+      critical: 320
+      dead: 500
+  - type: CombatMode
+  - type: Stamina
+  - type: NpcFactionMember
+    factions: [ SimpleHostile ]
+  - type: TitanBoss # наш shared-компонент
+    # Параметры по умолчанию можно переопределить здесь
+    arenaRadius: 12
+    arenaSegments: 36
+    attackInterval: 3.0
+
+# Барьер арены — простой сегмент силового поля/стены
+- type: entity
+  id: TitanArenaBarrierSegment
+  name: Arena Barrier
+  description: A humming forcefield segment.
+  components:
+  - type: Sprite
+    sprite: Structures/Forcefields/forcefield.rsi
+    state: segment
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      wall:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.5,-0.1,0.5,0.1"
+        density: 1000
+        mask:
+        - WallLayer
+        layer:
+        - WallLayer
+  - type: Transform
+    anchored: true
+  #- type: Impassable
