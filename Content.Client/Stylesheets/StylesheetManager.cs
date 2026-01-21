@@ -16,16 +16,20 @@ namespace Content.Client.Stylesheets
 
         [Dependency]
         private readonly IResourceCache
-            _resCache = default!; // TODO: REMOVE (obsolete; used to construct StyleNano/StyleSpace)
+            _resCache = default!; // TODO: REMOVE (obsolete; used to construct StyleNano/StyleSpace/MyCoolStyle)
 
         public Stylesheet SheetNanotrasen { get; private set; } = default!;
         public Stylesheet SheetSystem { get; private set; } = default!;
+        public Stylesheet SheetMyCoolStylesheet{get; private set;} = default!;
 
         [Obsolete("Update to use SheetNanotrasen instead")]
         public Stylesheet SheetNano { get; private set; } = default!;
 
         [Obsolete("Update to use SheetSystem instead")]
         public Stylesheet SheetSpace { get; private set; } = default!;
+
+        [Obsolete("Update to use SheetMyCoolStylesheet instead")]
+        public Stylesheet SheetMyCool { get; private set; } = default!;
 
         private Dictionary<string, Stylesheet> Stylesheets { get; set; } = default!;
 
@@ -49,10 +53,13 @@ namespace Content.Client.Stylesheets
             Stylesheets = new Dictionary<string, Stylesheet>();
             SheetNanotrasen = Init(new NanotrasenStylesheet(new BaseStylesheet.NoConfig(), this));
             SheetSystem = Init(new SystemStylesheet(new BaseStylesheet.NoConfig(), this));
+            SheetMyCoolStylesheet = Init(new MyCoolStylesheet(new BaseStylesheet.NoConfig(), this));
             SheetNano = new StyleNano(_resCache).Stylesheet; // TODO: REMOVE (obsolete)
             SheetSpace = new StyleSpace(_resCache).Stylesheet; // TODO: REMOVE (obsolete)
+            SheetMyCool = SheetMyCoolStylesheet;
 
-            _userInterfaceManager.Stylesheet = SheetNanotrasen;
+
+            _userInterfaceManager.Stylesheet = SheetMyCoolStylesheet;
 
             // warn about unused sheetlets
             if (UnusedSheetlets.Count > 0)
