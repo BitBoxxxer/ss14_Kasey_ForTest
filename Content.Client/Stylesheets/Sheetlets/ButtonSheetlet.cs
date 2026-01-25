@@ -17,8 +17,8 @@ public sealed class ButtonSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
         IButtonConfig buttonCfg = sheet;
         IIconConfig iconCfg = sheet;
 
-        var crossTex = sheet.GetTextureOr(iconCfg.CrossIconPath, NanotrasenStylesheet.TextureRoot);
-        var refreshTex = sheet.GetTextureOr(iconCfg.RefreshIconPath, NanotrasenStylesheet.TextureRoot);
+        var crossTex = sheet.GetTextureOr(iconCfg.CrossIconPath, OceanStarStylesheet.TextureRoot);
+        var refreshTex = sheet.GetTextureOr(iconCfg.RefreshIconPath, OceanStarStylesheet.TextureRoot);
 
         var rules = new List<StyleRule>
         {
@@ -121,7 +121,7 @@ public static class StyleBoxHelpers
     {
         var baseBox = new StyleBoxTexture
         {
-            Texture = sheet.GetTextureOr(sheet.BaseButtonPath, NanotrasenStylesheet.TextureRoot),
+            Texture = sheet.GetTextureOr(sheet.BaseButtonPath, OceanStarStylesheet.TextureRoot),
         };
         baseBox.SetPatchMargin(StyleBox.Margin.All, 10);
         baseBox.SetPadding(StyleBox.Margin.All, 1);
@@ -134,7 +134,7 @@ public static class StyleBoxHelpers
     {
         var openLeftBox = new StyleBoxTexture(BaseStyleBox(sheet))
         {
-            Texture = new AtlasTexture(sheet.GetTextureOr(sheet.OpenLeftButtonPath, NanotrasenStylesheet.TextureRoot),
+            Texture = new AtlasTexture(sheet.GetTextureOr(sheet.OpenLeftButtonPath, OceanStarStylesheet.TextureRoot),
                 UIBox2.FromDimensions(new Vector2(10, 0), new Vector2(14, 24))),
         };
         openLeftBox.SetPatchMargin(StyleBox.Margin.Left, 0);
@@ -147,7 +147,7 @@ public static class StyleBoxHelpers
     {
         var openRightBox = new StyleBoxTexture(BaseStyleBox(sheet))
         {
-            Texture = new AtlasTexture(sheet.GetTextureOr(sheet.OpenRightButtonPath, NanotrasenStylesheet.TextureRoot),
+            Texture = new AtlasTexture(sheet.GetTextureOr(sheet.OpenRightButtonPath, OceanStarStylesheet.TextureRoot),
                 UIBox2.FromDimensions(new Vector2(0, 0), new Vector2(14, 24))),
         };
         openRightBox.SetPatchMargin(StyleBox.Margin.Right, 0);
@@ -160,7 +160,7 @@ public static class StyleBoxHelpers
     {
         var openBothBox = new StyleBoxTexture(BaseStyleBox(sheet))
         {
-            Texture = new AtlasTexture(sheet.GetTextureOr(sheet.OpenBothButtonPath, NanotrasenStylesheet.TextureRoot),
+            Texture = new AtlasTexture(sheet.GetTextureOr(sheet.OpenBothButtonPath, OceanStarStylesheet.TextureRoot),
                 UIBox2.FromDimensions(new Vector2(10, 0), new Vector2(3, 24))),
         };
         openBothBox.SetPatchMargin(StyleBox.Margin.Horizontal, 0);
@@ -173,7 +173,7 @@ public static class StyleBoxHelpers
     {
         var smallBox = new StyleBoxTexture
         {
-            Texture = sheet.GetTextureOr(sheet.SmallButtonPath, NanotrasenStylesheet.TextureRoot),
+            Texture = sheet.GetTextureOr(sheet.SmallButtonPath, OceanStarStylesheet.TextureRoot),
         };
         return smallBox;
     }

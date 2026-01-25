@@ -21,7 +21,7 @@ public sealed partial class PaletteColorPicker : DefaultWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
-        _tex = _resourceCache.GetResource<TextureResource>("/Textures/Interface/Nano/button.svg.96dpi.png");
+        _tex = _resourceCache.GetResource<TextureResource>("/Textures/Interface/OceanStar/button.svg.96dpi.png");
 
         var i = 0;
         foreach (var palette in _prototypeManager.EnumeratePrototypes<ColorPalettePrototype>())

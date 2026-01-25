@@ -14,7 +14,7 @@ public sealed class LineEditSheetlet<T> : Sheetlet<T> where T : PalettedStyleshe
     {
         ILineEditConfig lineEditCfg = sheet;
 
-        var lineEditStylebox = sheet.GetTextureOr(lineEditCfg.LineEditPath, NanotrasenStylesheet.TextureRoot)
+        var lineEditStylebox = sheet.GetTextureOr(lineEditCfg.LineEditPath, OceanStarStylesheet.TextureRoot)
             .IntoPatch(StyleBox.Margin.All, 3);
         lineEditStylebox.SetContentMarginOverride(StyleBox.Margin.Horizontal, 5);
 

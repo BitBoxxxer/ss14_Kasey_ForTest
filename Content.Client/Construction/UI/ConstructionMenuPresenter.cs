@@ -229,7 +229,7 @@ namespace Content.Client.Construction.UI
 
                 var itemButtonPanelContainer = new PanelContainer
                 {
-                    PanelOverride = new StyleBoxFlat { BackgroundColor = StyleNano.ButtonColorDefault },
+                    PanelOverride = new StyleBoxFlat { BackgroundColor = StyleOS.ButtonColorDefault },
                     Children = { itemButton },
                 };
 
@@ -312,7 +312,7 @@ namespace Content.Client.Construction.UI
                 return;
 
             button.Children.Single().Modulate = select ? Color.Green : Color.White;
-            var buttonColor = select ? StyleNano.ButtonColorDefault : Color.Transparent;
+            var buttonColor = select ? StyleOS.ButtonColorDefault : Color.Transparent;
             buttonPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = buttonColor };
         }
 

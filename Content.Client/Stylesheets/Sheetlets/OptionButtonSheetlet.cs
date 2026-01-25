@@ -15,7 +15,7 @@ public sealed class OptionButtonSheetlet<T> : Sheetlet<T> where T : PalettedStyl
         IIconConfig iconCfg = sheet;
 
         var invertedTriangleTex =
-            sheet.GetTextureOr(iconCfg.InvertedTriangleIconPath, NanotrasenStylesheet.TextureRoot);
+            sheet.GetTextureOr(iconCfg.InvertedTriangleIconPath, OceanStarStylesheet.TextureRoot);
 
         return
         [

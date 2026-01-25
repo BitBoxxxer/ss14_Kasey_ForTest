@@ -20,12 +20,16 @@ namespace Content.Client.Stylesheets
 
         public Stylesheet SheetNanotrasen { get; private set; } = default!;
         public Stylesheet SheetSystem { get; private set; } = default!;
+        public Stylesheet SheetOceanStar { get; private set; } = default!;
 
         [Obsolete("Update to use SheetNanotrasen instead")]
         public Stylesheet SheetNano { get; private set; } = default!;
 
         [Obsolete("Update to use SheetSystem instead")]
         public Stylesheet SheetSpace { get; private set; } = default!;
+
+        [Obsolete("Update to use SheetOceanStar instead")]
+        public Stylesheet SheetOS { get; private set; } = default!; // Разобраться к чему относится "private set;"
 
         private Dictionary<string, Stylesheet> Stylesheets { get; set; } = default!;
 
@@ -49,10 +53,12 @@ namespace Content.Client.Stylesheets
             Stylesheets = new Dictionary<string, Stylesheet>();
             SheetNanotrasen = Init(new NanotrasenStylesheet(new BaseStylesheet.NoConfig(), this));
             SheetSystem = Init(new SystemStylesheet(new BaseStylesheet.NoConfig(), this));
+            SheetOceanStar = Init(new OceanStarStylesheet(new BaseStylesheet.NoConfig(), this));
             SheetNano = new StyleNano(_resCache).Stylesheet; // TODO: REMOVE (obsolete)
             SheetSpace = new StyleSpace(_resCache).Stylesheet; // TODO: REMOVE (obsolete)
+            SheetOceanStar = new StyleOS(_resCache).Stylesheet;
 
-            _userInterfaceManager.Stylesheet = SheetNanotrasen;
+            _userInterfaceManager.Stylesheet = SheetOceanStar; // TODO: Дописать Клиентский отклик (Настройки)
 
             // warn about unused sheetlets
             if (UnusedSheetlets.Count > 0)

@@ -13,8 +13,8 @@ public sealed class CheckboxSheetlet<T> : Sheetlet<T> where T : PalettedStyleshe
     {
         ICheckboxConfig checkboxCfg = sheet;
 
-        var uncheckedTex = sheet.GetTextureOr(checkboxCfg.CheckboxUncheckedPath, NanotrasenStylesheet.TextureRoot);
-        var checkedTex = sheet.GetTextureOr(checkboxCfg.CheckboxCheckedPath, NanotrasenStylesheet.TextureRoot);
+        var uncheckedTex = sheet.GetTextureOr(checkboxCfg.CheckboxUncheckedPath, OceanStarStylesheet.TextureRoot);
+        var checkedTex = sheet.GetTextureOr(checkboxCfg.CheckboxCheckedPath, OceanStarStylesheet.TextureRoot);
 
         return
         [

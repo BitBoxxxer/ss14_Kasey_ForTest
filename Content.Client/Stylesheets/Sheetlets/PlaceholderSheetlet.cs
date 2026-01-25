@@ -15,7 +15,7 @@ public sealed class PlaceholderSheetlet<T> : Sheetlet<T> where T: PalettedStyles
     {
         IPlaceholderConfig placeholderCfg = sheet;
 
-        var placeholderBox = sheet.GetTextureOr(placeholderCfg.PlaceholderPath, NanotrasenStylesheet.TextureRoot)
+        var placeholderBox = sheet.GetTextureOr(placeholderCfg.PlaceholderPath, OceanStarStylesheet.TextureRoot)
             .IntoPatch(StyleBox.Margin.All, 19);
         placeholderBox.SetExpandMargin(StyleBox.Margin.All, -5);
         placeholderBox.Mode = StyleBoxTexture.StretchMode.Tile;

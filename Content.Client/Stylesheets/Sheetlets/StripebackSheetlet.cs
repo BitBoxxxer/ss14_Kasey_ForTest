@@ -16,7 +16,7 @@ public sealed class StripebackSheetlet<T> : Sheetlet<T> where T : PalettedStyles
 
         var stripeBack = new StyleBoxTexture
         {
-            Texture = sheet.GetTextureOr(stripebackCfg.StripebackPath, NanotrasenStylesheet.TextureRoot),
+            Texture = sheet.GetTextureOr(stripebackCfg.StripebackPath, OceanStarStylesheet.TextureRoot),
             Mode = StyleBoxTexture.StretchMode.Tile,
         };
 

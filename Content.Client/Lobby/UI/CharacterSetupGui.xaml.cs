@@ -37,7 +37,7 @@ namespace Content.Client.Lobby.UI
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
 
-            var panelTex = _resourceCache.GetTexture("/Textures/Interface/Nano/button.svg.96dpi.png");
+            var panelTex = _resourceCache.GetTexture("/Textures/Interface/OceanStar/button.svg.96dpi.png");
             var back = new StyleBoxTexture
             {
                 Texture = panelTex,

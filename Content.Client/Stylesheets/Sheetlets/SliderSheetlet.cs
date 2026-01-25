@@ -14,7 +14,7 @@ public sealed class SliderSheetlet<T> : Sheetlet<T> where T: PalettedStylesheet,
     {
         ISliderConfig sliderCfg = sheet;
 
-        var sliderFillTex = sheet.GetTextureOr(sliderCfg.SliderFillPath, NanotrasenStylesheet.TextureRoot);
+        var sliderFillTex = sheet.GetTextureOr(sliderCfg.SliderFillPath, OceanStarStylesheet.TextureRoot);
 
         var sliderFillBox = new StyleBoxTexture
         {
@@ -30,13 +30,13 @@ public sealed class SliderSheetlet<T> : Sheetlet<T> where T: PalettedStylesheet,
 
         var sliderForeBox = new StyleBoxTexture
         {
-            Texture = sheet.GetTextureOr(sliderCfg.SliderOutlinePath, NanotrasenStylesheet.TextureRoot),
+            Texture = sheet.GetTextureOr(sliderCfg.SliderOutlinePath, OceanStarStylesheet.TextureRoot),
             Modulate = Color.FromHex("#494949") // TODO: Unhardcode.
         };
 
         var sliderGrabBox = new StyleBoxTexture
         {
-            Texture = sheet.GetTextureOr(sliderCfg.SliderGrabber, NanotrasenStylesheet.TextureRoot),
+            Texture = sheet.GetTextureOr(sliderCfg.SliderGrabber, OceanStarStylesheet.TextureRoot),
         };
 
         sliderFillBox.SetPatchMargin(StyleBox.Margin.All, 12);

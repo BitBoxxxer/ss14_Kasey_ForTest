@@ -24,7 +24,7 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
 
         var headerStylebox = new StyleBoxTexture
         {
-            Texture = sheet.GetTextureOr(windowCfg.WindowHeaderTexturePath, NanotrasenStylesheet.TextureRoot),
+            Texture = sheet.GetTextureOr(windowCfg.WindowHeaderTexturePath, OceanStarStylesheet.TextureRoot),
             PatchMarginBottom = 3,
             ExpandMarginBottom = 3,
             ContentMarginBottomOverride = 0,
@@ -32,23 +32,23 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
         // TODO: This would probably be better palette-based but we can leave it for now.
         var headerAlertStylebox = new StyleBoxTexture
         {
-            Texture = sheet.GetTextureOr(windowCfg.WindowHeaderAlertTexturePath, NanotrasenStylesheet.TextureRoot),
+            Texture = sheet.GetTextureOr(windowCfg.WindowHeaderAlertTexturePath, OceanStarStylesheet.TextureRoot),
             PatchMarginBottom = 3,
             ExpandMarginBottom = 3,
             ContentMarginBottomOverride = 0,
         };
         var backgroundBox = new StyleBoxTexture()
         {
-            Texture = sheet.GetTextureOr(windowCfg.WindowBackgroundPath, NanotrasenStylesheet.TextureRoot),
+            Texture = sheet.GetTextureOr(windowCfg.WindowBackgroundPath, OceanStarStylesheet.TextureRoot),
         };
         backgroundBox.SetPatchMargin(StyleBox.Margin.Horizontal | StyleBox.Margin.Bottom, 2);
         backgroundBox.SetExpandMargin(StyleBox.Margin.Horizontal | StyleBox.Margin.Bottom, 2);
         var borderedBackgroundBox = new StyleBoxTexture
         {
-            Texture = sheet.GetTextureOr(windowCfg.WindowBackgroundBorderedPath, NanotrasenStylesheet.TextureRoot),
+            Texture = sheet.GetTextureOr(windowCfg.WindowBackgroundBorderedPath, OceanStarStylesheet.TextureRoot),
         };
         borderedBackgroundBox.SetPatchMargin(StyleBox.Margin.All, 2);
-        var closeButtonTex = sheet.GetTextureOr(iconCfg.CrossIconPath, NanotrasenStylesheet.TextureRoot);
+        var closeButtonTex = sheet.GetTextureOr(iconCfg.CrossIconPath, OceanStarStylesheet.TextureRoot);
 
         var leftPanel = StyleBoxHelpers.OpenLeftStyleBox(sheet);
         leftPanel.SetPadding(StyleBox.Margin.All, 0.0f);
@@ -111,7 +111,7 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
             E<TextureButton>()
                 .Class(FancyWindow.StyleClassWindowHelpButton)
                 .Prop(TextureButton.StylePropertyTexture,
-                    sheet.GetTextureOr(iconCfg.HelpIconPath, NanotrasenStylesheet.TextureRoot))
+                    sheet.GetTextureOr(iconCfg.HelpIconPath, OceanStarStylesheet.TextureRoot))
                 .Prop(Control.StylePropertyModulateSelf, sheet.PrimaryPalette.Element),
             E<TextureButton>()
                 .Class(FancyWindow.StyleClassWindowHelpButton)

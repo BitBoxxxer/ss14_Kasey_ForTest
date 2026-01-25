@@ -13,12 +13,18 @@ public interface IStylesheetManager
     ///
     Stylesheet SheetSystem { get; }
 
+    /// OceanStar Style for new look, why not ?)
+    Stylesheet SheetOceanStar { get; }
+
 
     [Obsolete("Update to use SheetNanotrasen instead")]
     Stylesheet SheetNano { get; }
 
     [Obsolete("Update to use SheetSystem instead")]
     Stylesheet SheetSpace { get; }
+
+    [Obsolete("Update to use SheetOceanStar instead")]
+    Stylesheet SheetOS { get; }
 
     /// get a stylesheet by name
     public bool TryGetStylesheet(string name, [MaybeNullWhen(false)]  out Stylesheet stylesheet);

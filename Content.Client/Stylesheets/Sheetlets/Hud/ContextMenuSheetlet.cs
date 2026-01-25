@@ -31,7 +31,7 @@ public sealed class ContextMenuSheetlet<T> : Sheetlet<T>
 
         var borderedWindowBackground = new StyleBoxTexture
         {
-            Texture = sheet.GetTextureOr(windowCfg.WindowBackgroundBorderedPath, NanotrasenStylesheet.TextureRoot),
+            Texture = sheet.GetTextureOr(windowCfg.WindowBackgroundBorderedPath, OceanStarStylesheet.TextureRoot),
         };
         borderedWindowBackground.SetPatchMargin(StyleBox.Margin.All, ContextMenuElement.ElementMargin);
         var buttonContext = new StyleBoxTexture { Texture = Texture.White };
